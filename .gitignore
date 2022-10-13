@@ -1,5 +1,5 @@
 #ssh key
-ssh_key/private_key
+ansible_structure/ssh_key/private_key
 
 #vagrant directory
-.vagrant/**
+ansible_structure/.vagrant/**
