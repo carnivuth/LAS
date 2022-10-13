@@ -4,21 +4,18 @@ all:
    hosts:
     127.0.0.1:
      ansible_hostname: server
-     ansible_port: 2203
      ansible_user: vagrant
      ansible_ssh_private_key_file: .vagrant/machines/server/virtualbox/private_key
   clients:
    hosts:
     127.0.0.1:
      ansible_hostname: client
-     ansible_port: 2202
      ansible_user: vagrant
      ansible_ssh_private_key_file: .vagrant/machines/client/virtualbox/private_key
   routers:
    hosts:
     127.0.0.1:
      ansible_hostname: router1
-     ansible_port: 2200
      ansible_user: vagrant
      ansible_ssh_private_key_file: .vagrant/machines/router1/virtualbox/private_key
   
