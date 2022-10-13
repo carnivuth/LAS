@@ -1,2 +1,5 @@
 #ssh key
 ssh_key/private_key
+
+#vagrant directory
+.vagrant/*
