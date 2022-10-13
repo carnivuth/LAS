@@ -1,0 +1,12 @@
+- hosts: servers
+  roles:
+    - common
+    - servers
+- hosts: clients
+  roles:
+    - common
+    - clients
+- hosts: routers
+  roles:
+    - common
+    - routers

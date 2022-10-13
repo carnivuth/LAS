@@ -1,0 +1,12 @@
+all:
+ children:
+  servers:
+   hosts:
+    127.0.0.1:
+     ansible_port: 2222
+     ansible_user: vagrant
+     ansible_ssh_private_key_file: /home/matteo/VMs/vm_virtuale/.vagrant/machines/default/virtualbox/private_key
+  clients:
+   hosts:
+  routers:
+   hosts:
