@@ -1,0 +1,14 @@
+- name: install snmpd 
+  become: true
+  ansible.builtin.apt:
+   name: snmpd 
+   state: present
+   update_cache: yes
+   
+- name: copy snmpd configuration
+  become: true
+  ansible.builtin.copy:
+   src: ../files/snmpd.conf
+   dest: /etc/snmp/snmp.conf
+  notify: 
+  - Restart Snmpd
