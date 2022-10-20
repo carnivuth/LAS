@@ -1,9 +1,0 @@
-tasks:
-- name: "Add the user'name'"
-ansible.builtin.user:
-  name: name
-  comment: name 
-  password: "prova"
-  create_home: yes
-  expires: 180
-  
