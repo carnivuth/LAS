@@ -1,45 +1,14 @@
+    - name: Change allow-hotplug with auto
+      become: true
+      ansible.builtin.replace:
+         path: '/etc/network/interfaces'
+         regexp: 'allow-hotplug'
+         replace: 'auto'
+         validate: /usr/sbin/ifup --no-act -i %s eth0
 
-  - name: create user matteo
-    become: true
-    ansible.builtin.user:
-     name: matteo
-     comment: utente_matteo
-     password: "{{ 'prova' | password_hash('sha512') }}"
-     create_home: yes
-     expires: 15552000
-  - name: Upload ssh public key in Authorized_key
-    become: true
-    ansible.posix.authorized_key:
-     user: matteo
-     state: present
-     key: "{{ lookup('file', '~/.ssh/id_rsa_ansible.pub') }}"
-  - name: copy file to remote
-    become: true
-    ansible.builtin.copy:
-      src: /home/matteo/VMs/vm_virtuale/copy.sh
-      dest: /usr/bin/
-      owner: root
-      mode: 700
-  - name: copy file to remote
-    become: true
-    ansible.builtin.copy:
-      src: /home/matteo/VMs/vm_virtuale/save.list
-      dest: /etc
-      owner: root
-      mode: 700
-  - name: Ensure passwd is backed up
-    become: true
-    ansible.builtin.lineinfile:
-      path: /etc/save.list
-      line: /etc/passwd
-  - name: Schedule backup
-    ansible.builtin.cron:
-      name: "backup selected files"
-      minute: "*/2"
-      weekday: "1-5"
-      month: "1-7,9-12"
-      job: "/usr/bin/copy.sh 2>/dev/null >/dev/null"
-  - name: Guarantee rsyslog is started
-    ansible.builtin.systemd:
-      name: rsyslog.service
-      state: started
+    - name: set repository contrib non-free
+      become: true
+      ansible.builtin.replace:
+         path: '/etc/apt/sources.list'
+         regexp: 'main$'
+         replace: 'main contrib non-free'
