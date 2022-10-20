@@ -1,0 +1,16 @@
+- name: install snmp 
+  become: true
+  ansible.builtin.apt:
+   name: snmp 
+   state: present
+- name: install snmp-mibs-downloader
+  become: true
+  ansible.builtin.apt:
+   name: snmp-mibs-downloader
+   state: present
+- name: comment snmp.conf
+  become: true
+  ansible.builtin.replace:
+   path: /etc/snmp/snmp.conf
+   regexp: '^mibs :'
+   replace: '#mibs:'
