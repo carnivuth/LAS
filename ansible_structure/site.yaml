@@ -1,3 +1,7 @@
+- hosts: routers
+  roles:
+    - common
+    - routers
 - hosts: servers
   roles:
     - common
@@ -6,7 +10,3 @@
   roles:
     - common
     - clients
-- hosts: routers
-  roles:
-    - common
-    - routers
