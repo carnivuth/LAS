@@ -9,6 +9,14 @@
   become: true
   ansible.builtin.copy:
    src: ../files/snmpd.conf
-   dest: /etc/snmp/snmp.conf
+   dest: /etc/snmp/snmpd.conf
   notify: 
   - Restart Snmpd
+
+- name: Allow the snmp-user to sudo command
+  become: true
+  community.general.sudoers:
+    name: allow-snmp
+    state: present
+    user: debian-snmp
+    commands: /usr/bin/ss -lntp
