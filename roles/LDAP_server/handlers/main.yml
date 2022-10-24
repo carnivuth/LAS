@@ -1,10 +1,5 @@
- - name: Restart Networking
+ - name: Restart Slapd
    become: true
    ansible.builtin.service:
-     name: networking
-     state: restarted
- - name: Restart Dnsmasq
-   become: true
-   ansible.builtin.service:
-     name: dnsmasq
+     name: slapd
      state: restarted
