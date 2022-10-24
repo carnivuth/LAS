@@ -1,0 +1,68 @@
+- name: "Slapd configuration"
+  ansible.builtin.debconf:
+    name: slapd
+    question: "{{ item.question }}"
+    value: "{{ item.value }}"
+    vtype: "{{ item.vtype }}"
+  loop: "{{ debconf }}"
+  notify: Restart slapd
+- name: "ldap password"
+  ansible.builtin.debconf:
+    name: slapd
+    question: "{{ item.question }}"
+    value: "{{ item.password }}"
+    vtype: password
+  loop: "{{ password }}"
+  no_log: true
+- name: "Ldap installation"
+  become: true
+  ansible.builtin.apt:
+    name:
+      - slapd
+    update_cache: yes
+- name: "configure libnss-ldap"
+  ansible.builtin.debconf:
+    name: "libnss-ldap"
+    question: "{{ item.question }}"
+    value: "{{ item.value }}"
+    vtype: "{{ item.vtype }}"
+  loop: "{{ libnss_ldap }}"
+- name: "libnss-ldap password"
+  ansible.builtin.debconf:
+    name: libnss-ldap
+    question: "{{ item.question }}"
+    value: "{{ item.value }}"
+    vtype: "password"
+  loop: "{{ libnss_ldap_password }}"
+  no_log: true
+- name: "configure libpam-ldap"
+  ansible.builtin.debconf:
+    name: libpam-ldap
+    question: "{{ item.question }}"
+    value: "{{ item.value }}"
+    vtype: "{{ item.vtype }}"
+  loop: "{{ libpam_ldap }}"
+- name: "libpam-ldap password"
+  ansible.builtin.debconf:
+    name: libpam-ldap
+    question: "{{ item.question }}"
+    value: "{{ item.value }}"
+    vtype: "password"
+  loop: "{{ libpam_ldap_password }}"
+  no_log: true
+- name: "copy files"
+  ansible.builtin.copy:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+  loop: "{{ files }}"
+- name: "configure ldap file"
+  ansible.builtin.replace:
+    path: "/etc/ldap/ldap.conf"
+    regexp: "<ADDRESS>"
+    replace: '{{ address }}'
+- name: "Ldap installation"
+  ansible.builtin.apt:
+    name:
+      - libnss-ldap
+      - libpam-ldap
+    update_cache: yes
