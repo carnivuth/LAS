@@ -3,3 +3,5 @@ ansible_structure/ssh_key/private_key
 
 #vagrant directory
 ansible_structure/.vagrant/**
+#vagrant log files
+*.log
