@@ -8,6 +8,7 @@
     - common
     - servers
     - snmp_agent
+    - LDAP_server
 - hosts: clients
   roles:
     - common

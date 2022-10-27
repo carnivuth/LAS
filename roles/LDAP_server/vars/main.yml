@@ -1,3 +1,5 @@
+    password:
+    
     debconf:
     - question: "slapd/move_old_database"
       value: true 
@@ -20,77 +22,10 @@
     - question: "slapd/slapd/invalid_config"
       value: false
       vtype: boolean
-    password:
     - question: "slapd/password1"
-      password: "gennaio.marzo"
+      value: "gennaio.marzo"
+      vtype: password
     - question: "slapd/password2"
-      password: "gennaio.marzo"
-    libnss_ldap:
-    - question: "shared/ldapns/base-dn"
-      value: dc=labammsis
-      vtype: string
-    - question: "libnss-ldap/rootbinddn"
-      value: cn=admin,dc=labammsis
-      vtype: string
-    - question: "libnss-ldap/dblogin"
-      value: "false"
-      vtype: boolean
-    - question: "libnss-ldap/confperm" 
-      value: false
-      vtype: boolean
-    - question: "libnss-ldap/dbrootlogin" 
-      value: false 
-      vtype: boolean
-    - question: "shared/ldapns/ldap_version" 
-      value: 3 
-      vtype: select
-    - question: "libnss-ldap/rootbinddn" 
-      value: "cn=admin" 
-      vtype: string
-    - question: "shared/ldapns/ldap-server" 
-### IP DA CAMBIARE ###
-      value: "ldap://10.222.222.132"
-      vtype: string
-    - question: "libnss-ldap/override" 
-      value: true 
-      vtype: boolean
-    - question: "libnss-ldap/nsswitch" 
-      value: "" 
-      vtype: string
-    libnss_ldap_password:
-    - question: "libnss-ldap/rootbindpw"
       value: "gennaio.marzo"
-    libpam_ldap:
-    - question: "shared/ldapns/base-dn"
-      value: dc=labammsis 
-      vtype: string
-    - question: "libpam-ldap/pam_password"
-      value: "crypt"
-      vtype: string
-    - question: "libpam-ldap/dblogin" 
-      value: false
-      vtype: boolean
-    - question: "libpam-ldap/dbrootlogin"
-      value: true
-      vtype: boolean
-    - question: "libpam-ldap/rootbinddn"
-      value: "cn=admin,dc=labammsis" 
-      vtype: string
-    - question: "shared/ldapns/ldap-server"
-### IP DA CAMBIARE ###
-      value: "ldap://10.222.222.132"
-      vtype: string
-    - question: "shared/ldapns/ldap_version"
-      value: 3
-      vtype: select
-    libpam_ldap_password:
-    - question: "libpam-ldap/rootbindpw"
-      value: "gennaio.marzo"
-      vtype: "password"
-    files:
-    - src: "common_files/nsswitch.conf"
-      dest: "/etc/nsswitch.conf"
-    - src: "common_files/ldap.conf"
-      dest: "/etc/ldap/ldap.conf"
-### IP DA CAMBIARE ###
-    address: "10.222.222.132"
+      vtype: password
+    
