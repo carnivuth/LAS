@@ -8,8 +8,11 @@
     - common
     - servers
     - snmp_agent
-    - LDAP_server
+   # - LDAP_server_installation
+   # - LDAP_server_users_setup
+   # - LDAP_login_setup
 - hosts: clients
   roles:
     - common
     - clients
+    - LDAP_login_setup
