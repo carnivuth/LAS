@@ -1,0 +1,6 @@
+lines:
+ - regexp: '^#module\(load="imudp"\)' 
+   replace: 'module(load="imudp")'
+ - regexp: '^#input\(type="imudp" port="514"\)'
+   replace: 'input(type="imudp" port="514")'
+   
