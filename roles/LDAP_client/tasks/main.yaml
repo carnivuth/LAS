@@ -1,7 +1,0 @@
-- name: install ldap utils
-  become: true
-  ansible.builtin.apt:
-   name: ldap-utils
-   state: present
-   update_cache: yes
-   
