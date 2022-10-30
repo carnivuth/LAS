@@ -1,19 +1,20 @@
-    - name: Change allow-hotplug with auto
-      become: true
-      ansible.builtin.replace:
-         path: '/etc/network/interfaces'
-         regexp: 'allow-hotplug'
-         replace: 'auto'
-         validate: /usr/sbin/ifup --no-act -i %s eth0
+- name: Change allow-hotplug with auto
+  become: true
+  ansible.builtin.replace:
+   path: '/etc/network/interfaces'
+   regexp: 'allow-hotplug'
+   replace: 'auto'
+   validate: /usr/sbin/ifup --no-act -i %s eth0
 
-    - name: set repository contrib non-free
-      become: true
-      ansible.builtin.replace:
-         path: '/etc/apt/sources.list'
-         regexp: 'main$'
-         replace: 'main contrib non-free'
-    - name: install python3-ldap
-      become: true
-      ansible.builtin.apt:
-         name: python3-ldap
-         update_cache: true
+- name: set repository contrib non-free
+  become: true
+  ansible.builtin.replace:
+   path: '/etc/apt/sources.list'
+   regexp: 'main$'
+   replace: 'main contrib non-free'
+  
+- name: install python3-ldap
+  become: true
+  ansible.builtin.apt:
+   name: python3-ldap
+   update_cache: true

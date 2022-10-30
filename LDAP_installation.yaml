@@ -1,0 +1,4 @@
+- hosts: servers
+  roles:
+    - LDAP_server_installation
+    - LDAP_server_users_setup
