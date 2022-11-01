@@ -4,3 +4,4 @@
 .vagrant/**
 #vagrant log files
 *.log
+scripts/*
