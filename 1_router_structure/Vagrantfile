@@ -9,7 +9,7 @@ Vagrant.configure("2") do |config|
 	#	ansible.playbook = "site.yaml"
    
   #end
-    config.vm.define "router1" do |machine|
+    config.vm.define "router" do |machine|
         machine.vm.hostname = "router1"
         machine.vm.network "private_network", virtualbox__intnet: "LAN1", auto_config: false
         machine.vm.network "private_network", virtualbox__intnet: "LAN2", auto_config: false
