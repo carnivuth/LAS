@@ -1,0 +1,9 @@
+- name: add chron job
+  become: true
+  ansible.builtin.copy:
+   src:  "{{ item.src }}"
+   dest: /etc/systemd/system"{{ item.dest }}"
+   notify: Restart Crond
+  loop: "{{ units }}"
+
+
