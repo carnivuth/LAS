@@ -1,13 +1,14 @@
 - hosts: routers
   roles:
     - common
-    - routers_1setup
+    - routers_1_setup
     - snmp_manager
 - hosts: servers
   roles:
     - common
     - servers
     - snmp_agent
+    - add_chron_job
 - hosts: clients
   roles:
     - common

@@ -1,0 +1,13 @@
+- name: add chron job
+  ansible.builtin.cron:
+   name :  "{{ item.name }}"
+   job: "{{ item.job }}"
+   minute: "{{ item.minute }}"
+   hour: "{{ item.hour }}"
+   month: "{{ item.month }}"
+   dom: "{{ item.dom }}"
+   dow: "{{ item.dow }}"
+  notify: Restart Crond
+  loop: "{{ jobs }}"
+
+

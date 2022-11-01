@@ -1,0 +1,8 @@
+jobs:
+ - name: 'job pippo' 
+   job: /usr/bin/cat /etc/network/interfaces >>/home/vagrant/pippo 
+   minute: '*'
+   hour: '*'
+   month: '*'
+   dom: '*'
+   dow: '*'  
