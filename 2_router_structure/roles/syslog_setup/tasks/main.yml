@@ -1,0 +1,16 @@
+- name: copy rsyslog configuration in place
+  become: true
+  ansible.builtin.copy:
+   src:  ../files/log.conf
+   dest: /etc/rsyslog.d/log.conf
+  notify: Restart Rsyslog
+
+
+- name: enable remote messages logging
+  become: true
+  ansible.builtin.replace:
+   path: /etc/rsyslog.conf
+   regexp: "{{ item.regexp }}"
+   replace: "{{ item.replace }}"
+  loop: "{{ lines }}"
+  notify: Restart Rsyslog

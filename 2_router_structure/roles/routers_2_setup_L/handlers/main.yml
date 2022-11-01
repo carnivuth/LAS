@@ -1,0 +1,10 @@
+ - name: Restart Networking
+   become: true
+   ansible.builtin.service:
+     name: networking
+     state: restarted
+ - name: Restart Dnsmasq
+   become: true
+   ansible.builtin.service:
+     name: dnsmasq
+     state: restarted

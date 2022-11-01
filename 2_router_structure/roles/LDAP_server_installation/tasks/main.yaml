@@ -1,0 +1,34 @@
+- name: "Slapd configuration"
+  become: true
+  ansible.builtin.debconf:
+    name: slapd
+    question: "{{ item.question }}"
+    value: "{{ item.value }}"
+    vtype: "{{ item.vtype }}"
+  loop: "{{ debconf }}"
+  notify: Restart Slapd
+
+
+- name: "Ldap installation"
+  become: true
+  ansible.builtin.apt:
+    name:
+      - slapd
+    update_cache: yes
+
+- name: istall ldap-utils
+  become: true
+  ansible.builtin.apt:
+   name: ldap-utils
+   update_cache: true
+
+#- name: insert ldap People entry
+#  community.general.ldap_entry:
+#  dn: ou=People,dc=labammsis
+#  objectClass: organizationalunit
+
+
+#- name: insert ldap Groups entry
+#  community.general.ldap_entry:
+#  dn: ou=Groups,dc=labammsis
+#  objectClass: organizationalunit

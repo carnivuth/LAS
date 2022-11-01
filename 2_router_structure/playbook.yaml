@@ -1,0 +1,16 @@
+- hosts: routers_2
+  roles:
+#    - common
+    - routers_2_setup_R
+- hosts: routers_1
+  roles:
+ #   - common
+    - routers_2_setup_L
+- hosts: servers
+  roles:
+  #  - common
+    - servers  
+- hosts: clients
+  roles:
+   # - common
+    - clients

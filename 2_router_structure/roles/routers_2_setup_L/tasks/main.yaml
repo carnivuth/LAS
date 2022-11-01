@@ -1,0 +1,34 @@
+- name: copy network configuration
+  become: true
+  ansible.builtin.copy:
+   src: ../files/{{ item }}
+   dest: /etc/network/interfaces.d/{{ item }}
+  loop:
+   - eth1_cfg
+   - eth2_cfg
+  notify:
+  - Restart Networking
+
+- name: enable forwarding
+  become: true
+  ansible.posix.sysctl:
+   name: net.ipv4.ip_forward
+   value: '1'
+   sysctl_set: yes
+   state: present
+   reload: yes
+
+- name: install dnsmasq
+  become: true
+  ansible.builtin.apt:
+   name: dnsmasq
+   update_cache: yes
+   state: present
+
+- name: copy dnsmasq configuration
+  become: true
+  ansible.builtin.copy:
+   src: ../files/dnsmasq.conf
+   dest: /etc/dnsmasq.d/dnsmasq.conf
+  notify:
+  - Restart Dnsmasq

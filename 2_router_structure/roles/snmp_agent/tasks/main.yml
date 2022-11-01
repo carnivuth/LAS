@@ -1,0 +1,22 @@
+- name: install snmpd 
+  become: true
+  ansible.builtin.apt:
+   name: snmpd 
+   state: present
+   update_cache: yes
+   
+- name: copy snmpd configuration
+  become: true
+  ansible.builtin.copy:
+   src: ../files/snmpd.conf
+   dest: /etc/snmp/snmpd.conf
+  notify: 
+  - Restart Snmpd
+
+- name: Allow the snmp-user to sudo command
+  become: true
+  community.general.sudoers:
+    name: allow-snmp
+    state: present
+    user: debian-snmp
+    commands: /usr/bin/ss -lntp
