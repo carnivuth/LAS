@@ -8,7 +8,7 @@
     - common
     - servers
     - snmp_agent
-    - add_chron_job
+   # - add_chron_job
 - hosts: clients
   roles:
     - common

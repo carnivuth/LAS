@@ -14,6 +14,7 @@ Vagrant.configure("2") do |config|
         machine.vm.network "private_network", virtualbox__intnet: "LAN1", auto_config: false
         machine.vm.network "private_network", virtualbox__intnet: "LAN2", auto_config: false
   end
+  
   config.vm.define "client" do |machine|
     machine.vm.hostname = "client"
     machine.vm.network "private_network", virtualbox__intnet: "LAN1", auto_config: false
