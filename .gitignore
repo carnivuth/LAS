@@ -4,4 +4,8 @@
 .vagrant/**
 #vagrant log files
 *.log
+
+#vscode setup
+.vscode
+#scripts
 scripts/*
