@@ -17,7 +17,7 @@ nella repository **non sono presenti esempi di scriptig bash** in quanto diffici
 ---
 
 ## STRUTTURA    
-nella repository per ogni infrastruttura di rete è presente una gerarchia di cartelle come richieste dalla libreria [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html) 
+nella repository per ogni infrastruttura di rete è presente una gerarchia di cartelle come richieste dalla struttura [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html) 
 
 per ogni macro argomento del corso inoltre sono disponibili roles ansible che si occupano del provision tra cui 
 
