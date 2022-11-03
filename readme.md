@@ -49,7 +49,7 @@ sono inoltre presenti i corrispondenti vagrantfile con la definizione dell'envir
 distruggendo e ricreando le vm potreste incorrere in errori relativi alle chiavi ssh, per risolvere cancellare il contenuto nel file `/home/utente/.ssh/known_hosts`
 
 ---
-##CREDITI
+## CREDITI
 
 * [carnivuth](https://github.com/carnivuth)
 * [BlessedRebuS](https://github.com/BlessedRebuS)
