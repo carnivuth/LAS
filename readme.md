@@ -37,7 +37,7 @@ sono inoltre presenti i corrispondenti vagrantfile con la definizione dell'envir
 * clonare la [repository](https://github.com/carnivuth/LAS.git)
 * installare la collection community.general di ansible 
 * avviare le vm con `vagrant up`
-* per evvettuare il provisioning modificare il file playbook.yaml con i roles che si vogliono utilizzare e effetuare il rpovision con
+* per evvettuare il provisioning modificare il file playbook.yaml con i roles che si vogliono utilizzare e effetuare il provision con
 `ansible-playbook -i inventory.yaml playbook.yaml`
 * per installare il server LDAP
 `ansible-playbook -i inventory.yaml LDAP_installation.yaml`
