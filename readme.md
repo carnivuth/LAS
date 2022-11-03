@@ -12,7 +12,7 @@ all'interno della repositori sono presenti 2 strutture ansible roles indipendent
 è inoltre presente una raccolta delle domande presenti alla parte di teoria (**da prendere solo come strumento di ripasso, è possibile che il professore estenda le domande della teoria**) 
 
 ##  COSA NON TROVERETE
-nella repository non sono presenti esempi di scriptig bash in quanto difficilmente "templatabili" e cangianti ai vari esami, per quelli l'unica soluzione è l'esercizio in laboratorio e a casa 
+nella repository **non sono presenti esempi di scriptig bash** in quanto difficilmente "templatabili" e cangianti ai vari esami, per quelli l'unica soluzione è l'esercizio in laboratorio e a casa 
 
 ---
 
