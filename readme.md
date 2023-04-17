@@ -9,7 +9,7 @@ all'interno della repositori sono presenti 2 strutture ansible roles indipendent
 * rete client - router - router - rete dei server
 * rete client - router - rete dei server
 
-è inoltre presente una raccolta delle domande presenti alla parte di teoria (**da prendere solo come strumento di ripasso, è possibile che il professore estenda le domande della teoria**) 
+è inoltre presente una raccolta delle [domande presenti alla parte di teoria](https://github.com/carnivuth/LAS/blob/master/teoria/teoria.md) (**da prendere solo come strumento di ripasso, è possibile che il professore estenda le domande della teoria**) 
 
 ##  COSA NON TROVERETE
 nella repository **non sono presenti esempi di scriptig bash** in quanto difficilmente "templatabili" e cangianti ai vari esami, per quelli l'unica soluzione è l'esercizio in laboratorio e a casa 
