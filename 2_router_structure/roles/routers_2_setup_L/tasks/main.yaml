@@ -3,6 +3,7 @@
   ansible.builtin.copy:
    src: ../files/{{ item }}
    dest: /etc/network/interfaces.d/{{ item }}
+   mode: '644'
   loop:
    - eth1_cfg
    - eth2_cfg
