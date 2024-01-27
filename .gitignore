@@ -1,10 +1,7 @@
-
-
 #vagrant directory
-.vagrant/**
+.vagrant
 #vagrant log files
 *.log
-
 #vscode setup
 .vscode
 #scripts
