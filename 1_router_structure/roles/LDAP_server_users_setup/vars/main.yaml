@@ -1,7 +1,7 @@
-password: gennaio.marzo
+password: pwdultrasecret
 
 users:
- - dn: uid=dave,ou=People,dc=labammsis 
+ - dn: uid=dave,ou=People,dc=labammsis
    givenName: Davide
    cn: Davide
    sn: Berardi

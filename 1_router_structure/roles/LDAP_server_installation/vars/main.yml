@@ -3,7 +3,7 @@
       value: true 
       vtype: select
     - question: "shared/organization"
-      value: "Unibo" 
+      value: "unibo" 
       vtype: string
     - question: "slapd/no_configuration" 
       value: false
@@ -21,9 +21,8 @@
       value: false
       vtype: boolean
     - question: "slapd/password1"
-      value: "gennaio.marzo"
+      value: "pwdultrasecret"
       vtype: password
     - question: "slapd/password2"
-      value: "gennaio.marzo"
+      value: "pwdultrasecret"
       vtype: password
-    
