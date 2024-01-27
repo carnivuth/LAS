@@ -34,7 +34,6 @@
     value: "{{ item.value }}"
     vtype: "{{ item.vtype }}"
   loop: "{{ debconf }}"
-  notify: Restart Slapd
 
 - name: "Ldap installation"
   become: true
