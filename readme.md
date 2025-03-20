@@ -17,18 +17,16 @@ nella repository **non sono presenti esempi di scripting bash** in quanto diffic
 
 ## Struttura
 
-Nella repository per ogni infrastruttura di rete è presente una gerarchia di cartelle come richieste dalla struttura [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html)
+Nella repository per ogni infrastruttura di rete è presente una gerarchia di cartelle come richieste dalla struttura [roles](https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html), per ogni macro argomento del corso inoltre sono disponibili roles ansible che si occupano del provision tra cui:
 
-Per ogni macro argomento del corso inoltre sono disponibili roles ansible che si occupano del provision tra cui
-
-* Setup della rete
-* Aggiunta di cron job
-* Aggiunta di unit di systemd
-* Setup del servizio di logging remoto
-* Setup del SNMP agent
-* Setup del SNMP manager
-* Setup del server LDAP tramite debconf
-* Setup del sistema di login tramite LDAP
+- Setup della rete
+- Aggiunta di cron job
+- Aggiunta di unit di systemd
+- Setup del servizio di logging remoto
+- Setup del SNMP agent
+- Setup del SNMP manager
+- Setup del server LDAP tramite debconf
+- Setup del sistema di login tramite LDAP
 
 Sono inoltre presenti i corrispondenti vagrantfile con la definizione dell'environment delle vm e le corrispettive inventory
 
